@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aahar Menu - POS Bill</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .receipt {
+            width: 250px; /* Adjust for 58mm printer */
+            padding: 10px;
+            border: 1px solid #000;
+            margin: auto;
+        }
+        h2 {
+            margin: 5px 0;
+        }
+        .center {
+            text-align: center;
+        }
+        .line {
+            border-top: 1px dashed #000;
+            margin: 5px 0;
+        }
+        table {
+            width: 100%;
+            font-size: 12px;
+            border-collapse: collapse;
+        }
+        th, td {
+            text-align: left;
+            padding: 2px 0;
+        }
+        .total {
+            font-weight: bold;
+        }
+        .footer {
+            margin-top: 10px;
+            font-size: 12px;
+        }
+        @media print {
+            body {
+                visibility: hidden;
+            }
+            .receipt {
+                visibility: visible;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="receipt">
+        <h2>Aahar Menu</h2>
+        <p>Demo Restaurant</p>
+        <p>Order No: #1023</p>
+        <p>Date & Time: 06-Feb-2025 | 7:30 PM</p>
+        <div class="line"></div>
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+                <td>Paneer Tikka</td>
+                <td>1</td>
+                <td>₹180</td>
+                <td>₹180</td>
+            </tr>
+            <tr>
+                <td>Butter Naan</td>
+                <td>2</td>
+                <td>₹50</td>
+                <td>₹100</td>
+            </tr>
+            <tr>
+                <td>Dal Makhani</td>
+                <td>1</td>
+                <td>₹220</td>
+                <td>₹220</td>
+            </tr>
+            <tr>
+                <td>Masala Dosa</td>
+                <td>1</td>
+                <td>₹150</td>
+                <td>₹150</td>
+            </tr>
+            <tr>
+                <td>Soft Drink</td>
+                <td>2</td>
+                <td>₹40</td>
+                <td>₹80</td>
+            </tr>
+        </table>
+        <div class="line"></div>
+        <table>
+            <tr>
+                <td class="total">Subtotal:</td>
+                <td class="total">₹730</td>
+            </tr>
+            <tr>
+                <td>GST (5%):</td>
+                <td>₹36.50</td>
+            </tr>
+            <tr>
+                <td class="total">Grand Total:</td>
+                <td class="total">₹766.50</td>
+            </tr>
+        </table>
+        <div class="line"></div>
+        <p>Payment Mode: UPI / Cash / Card</p>
+        <p class="footer">Thank you for dining with us!</p>
+        <p class="footer">Visit Again!</p>
+        <button onclick="window.print()">Print Bill</button>
+    </div>
+</body>
+</html>
